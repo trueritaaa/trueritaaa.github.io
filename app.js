@@ -523,7 +523,7 @@ function createProjects() {
   function layout() {
     W = el.clientWidth || innerWidth; H = el.clientHeight || innerHeight; phone = W <= 640;
     const stageTop = phone ? 56 : 64, stageBottom = H - (phone ? 88 : 92), stageH = Math.max(140, stageBottom - stageTop); // по центру между верхом и доком
-    const hs = phone ? [46, 38] : [42, 34, 48, 38], offs = phone ? [-2, 2, -3, 3] : [-2, 3, -3, 2];
+    const hs = phone ? [64, 56] : [72, 62, 78, 66], offs = phone ? [-1.5, 1.5, -2, 2] : [-1.5, 2, -2, 1.5];
     let x = phone ? 16 : Math.max(32, W * .07);
     cards.forEach((c, i) => {
       const off = offs[i % offs.length] / 100 * H;
