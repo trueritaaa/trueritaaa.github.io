@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Rita Everly — ИИ-видео, персонажи и реклама</title>
+<meta name="description" content="Rita Everly (trueritaaa): ИИ-персонажи с одним лицом, рекламные ролики и лукбуки для брендов. Всё сделано нейросетью.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Geist и Literata: оба с кириллицей (css2 API отдаёт все подмножества, браузер берёт нужные) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Literata:ital,wght@0,300..500;1,300..500&display=swap">
+<link rel="stylesheet" href="styles.css?v=18">
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+
+<!-- ============ ГАЛЕРЕЯ ============ -->
+<section class="view" id="gallery" aria-label="Галерея">
+  <div class="canvas-wrap" id="g-canvas"></div>
+  <canvas class="g-wm" id="g-wm"></canvas>
+  <div class="g-label g-left"><span>Rita Everly · trueritaaa</span></div>
+  <div class="g-label g-right"><span>Лицо одно, образов много</span></div>
+  <div class="g-counter"><span id="g-count">001</span></div>
+  <div class="g-cap"><div class="g-cap-in" id="g-cap"><span class="t" id="g-cap-t"></span><span class="c" id="g-cap-c"></span></div></div>
+  <div class="g-hint" id="g-hint">ПОКРУТИТЕ МЫШЬЮ</div>
+  <div class="g-ov" id="g-ov">
+    <div class="hd"><span class="ti" id="ov-t"></span><span class="ca" id="ov-c"></span><button class="x" id="ov-x" type="button">Закрыть</button></div>
+    <p class="ds" id="ov-d"></p>
+    <div class="tags" id="ov-tags"></div>
+  </div>
+</section>
+
+<!-- ============ РАБОТЫ ============ -->
+<section class="view" id="projects" aria-label="Работы">
+</section>
+
+<!-- ============ ОБО МНЕ ============ -->
+<section class="view" id="about" aria-label="Обо мне">
+  <div class="canvas-wrap" id="a-canvas"></div>
+  <div class="a-hint" id="a-hint">ЛИСТАЙТЕ <b>→</b></div>
+</section>
+
+<a class="order" id="order" href="https://t.me/margarita_1003" target="_blank" rel="noopener">Заказать</a>
+<div class="cur-label" id="g-cur">Подробнее</div>
+<div class="bubble" id="p-bubble">Смотреть</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true">
+  <div class="mw" id="lb-mw"></div>
+  <div class="meta">
+    <div class="hd"><span class="ti" id="lb-t"></span><span class="ca" id="lb-c"></span><button class="x" id="lb-x" type="button">Закрыть</button></div>
+    <p class="ds" id="lb-d"></p>
+  </div>
+</div>
+
+<!-- ============ ДОК ============ -->
+<nav class="dock" id="dock" aria-label="Навигация">
+  <a class="dock-wm" href="#gallery">RITA.E</a>
+  <i class="dv"></i>
+  <a class="tab" data-view="gallery" href="#gallery"><span class="tl">Галерея</span><span class="tn">1</span></a>
+  <a class="tab" data-view="projects" href="#projects"><span class="tl">Работы</span><span class="tn">2</span></a>
+  <a class="tab" data-view="about" href="#about"><span class="tl">Обо мне</span><span class="tn">3</span></a>
+  <i class="dv"></i>
+  <button class="menu-btn" id="menu-btn" type="button" aria-label="Меню" aria-expanded="false"><i></i></button>
+</nav>
+<div class="menu" id="menu">
+  <p>Пробный кадр до заказа. Пишите в Telegram</p>
+  <a class="row" href="#about">Обо мне <span>03</span></a>
+  <a class="row" href="#projects">Работы <span>02</span></a>
+  <a class="row" href="#gallery">Сфера <span>01</span></a>
+  <p class="disc">Все люди и сцены на сайте созданы нейросетью.</p>
+</div>
+
+<script type="module" src="app.js?v=18"></script>
+</body>
+</html>
