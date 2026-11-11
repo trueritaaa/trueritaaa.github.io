@@ -930,7 +930,11 @@ void main(){
     let out = lines.slice();
     const maxLine = () => Math.max(...out.map(l => { measure.font = fontOf(fs); return measure.measureText(l).width; }));
     if (maxLine() > avail) {
-      if (W <= 1024) { out = []; lines.forEach(l => out.push(...wrapWords(l, fontOf(fs), avail))); }
+      if (W <= 1024) {
+        // сначала уменьшаем шрифт (не мельче 24px), чтобы каждая строка влезла целиком; переносим, только если не хватило
+        fs = Math.max(24, Math.floor(fs * avail / maxLine()));
+        if (maxLine() > avail) { out = []; lines.forEach(l => out.push(...wrapWords(l, fontOf(fs), avail))); }
+      }
       else { fs = Math.floor(fs * avail / maxLine()); }
     }
     const lh = fs * 1.18;
