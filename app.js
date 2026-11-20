@@ -15,6 +15,11 @@ const CHANNEL_URL = 'https://t.me/trueritaaa';
    type: 'video' (нужны NN.mp4 + постер NN.jpg) или 'image' (только NN.jpg)
    ===================================================================== */
 const WORKS = [
+  {"id": 32, "aspect": 0.5625, "type": "video", "file": "works/fashion-gloves.mp4", "poster": "works/fashion-gloves-cover-v2.jpg", "title": "Лукбук. Перчатки в движении", "category": "Fashion", "year": 2026, "desc": "Образ 2: модель поправляет бордовые перчатки."},
+  {"id": 33, "aspect": 0.5625, "type": "video", "file": "works/fashion-feathers.mp4", "poster": "works/fashion-feathers-cover-v2.jpg", "title": "Лукбук. Красные перья в движении", "category": "Fashion", "year": 2026, "desc": "Образ 4: улыбка и поворот головы у бархатной шторы."},
+  {"id": 34, "aspect": 0.74625, "type": "image", "file": "works/fashion-look6-detail.jpg", "poster": "works/fashion-look6-detail.jpg", "title": "Лукбук. Образ 6, деталь", "category": "Fashion", "year": 2026, "desc": "Бордовый мех, четыре пуговицы и фактура сумки крупным планом."},
+  {"id": 35, "aspect": 0.5625, "type": "video", "file": "works/bag-lift.mp4", "poster": "works/bag-lift-cover-v2.jpg", "title": "Сумка. Подъём в кадре", "category": "Концепт рекламы", "year": 2026, "desc": "Модель поднимает светлую сумку: форма и детали товара в движении. Концепт, заказа не было."},
+  {"id": 36, "aspect": 0.558125, "type": "image", "file": "works/bag-backstage.jpg", "poster": "works/bag-backstage.jpg", "title": "Сумка. Две героини", "category": "Концепт рекламы", "year": 2026, "desc": "Бордовая сумка в кадре с двумя героинями. Концепт, заказа не было."},
   { id: 17, aspect: 4/5, type: 'image', file: 'works/17.jpg', poster: 'works/17.jpg', title: 'Лукбук. Образ 1', category: 'Fashion', year: 2026, desc: 'Фэшн-лукбук: одна модель в разных образах.' },
   { id: 18, aspect: 4/5, type: 'image', file: 'works/18.jpg', poster: 'works/18.jpg', title: 'Лукбук. Образ 2', category: 'Fashion', year: 2026, desc: 'Детали образа: ткань, перчатки и свет как на студийной съёмке.' },
   { id: 19, aspect: 4/5, type: 'image', file: 'works/19.jpg', poster: 'works/19.jpg', title: 'Лукбук. Образ 3', category: 'Fashion', year: 2026, desc: 'Третий образ лукбука в той же студии и с той же моделью.' },
@@ -540,14 +545,37 @@ function createProjects() {
   function ensureVideo(c) {
     if (c.video || c.item.type !== 'video') return;
     const v = c.video = makeVideo(c.item, 'auto'); v.draggable = false;
-    v.addEventListener('loadeddata', () => v.classList.add('on'));
+    v.poster = c.item.poster;
+    // Показываем видео только когда началось движение; до этого видна выбранная обложка.
+    v.addEventListener('playing', () => {
+      if ('requestVideoFrameCallback' in v) {
+        v.requestVideoFrameCallback(() => { if (!v.paused) v.classList.add('on'); });
+      } else v.classList.add('on');
+    });
+    v.addEventListener('pause', () => v.classList.remove('on'));
     c.in.appendChild(v);
   }
   function setPlay(c, on) {
-    if (c.play === on) return; c.play = on;
+    c.play = on;
     if (c.item.type !== 'video') return;
-    if (on) { ensureVideo(c); safePlay(c.video); } else if (c.video) c.video.pause();
+    if (!on || document.hidden) { if (c.video) c.video.pause(); return; }
+    ensureVideo(c);
+    if (!c.video.paused) return;
+    // Если браузер не разрешил автозапуск, повторяем попытку без наведения мыши.
+    const now = performance.now();
+    if (c.lastAttempt && now - c.lastAttempt < 1200) return;
+    c.lastAttempt = now;
+    safePlay(c.video);
   }
+  function retryVisibleVideos() {
+    if (!running || document.hidden) return;
+    cards.forEach(c => { if (c.play) { c.lastAttempt = 0; setPlay(c, true); } });
+  }
+  el.addEventListener('pointerdown', retryVisibleVideos);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) cards.forEach(c => { if (c.video) c.video.pause(); });
+    else retryVisibleVideos();
+  });
 
   /* ---- наведение ---- */
   const bx = gsap.quickTo(bubble, 'x', { duration: .5, ease: 'power3.out' }), by = gsap.quickTo(bubble, 'y', { duration: .5, ease: 'power3.out' });
@@ -641,7 +669,10 @@ function createProjects() {
       // реальные пропорции берём из постеров (не дольше 3 секунд)
       cards.forEach(c => { if (c.item.aspect) c.aspect = c.item.aspect; }); // пропорции заданы в WORKS — не ждём загрузки постеров
       await Promise.race([Promise.all(cards.filter(c => !c.item.aspect).map(async c => { const im = await loadImage(c.item.poster); if (im && im.naturalHeight) c.aspect = im.naturalWidth / im.naturalHeight; })), wait(3)]);
-      layout(); window.addEventListener('resize', () => { if (built) layout(); });
+      layout();
+      // Начинаем загрузку первых видимых роликов до появления ленты.
+      cards.forEach(c => { if (c.item.type === 'video' && c.x - offset < 1.2 * W && c.x - offset + c.w > -.2 * W) ensureVideo(c); });
+      window.addEventListener('resize', () => { if (built) layout(); });
     },
     enter() { running = true; lastPlayEval = 0; loop(); entrance(); },
     leave() { running = false; cancelAnimationFrame(raf); cards.forEach(c => setPlay(c, false)); setHover(null); closeLB(); },
