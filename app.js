@@ -73,17 +73,6 @@ const WORKS = [
     "desc": "Фэшн-лукбук: одна модель в разных образах."
   },
   {
-    "id": 18,
-    "aspect": 0.8,
-    "type": "image",
-    "file": "works/18.jpg",
-    "poster": "works/18.jpg",
-    "title": "Лукбук. Образ 2",
-    "category": "Fashion",
-    "year": 2026,
-    "desc": "Детали образа: ткань, перчатки и свет как на студийной съёмке."
-  },
-  {
     "id": 19,
     "aspect": 0.8,
     "type": "image",
@@ -93,6 +82,39 @@ const WORKS = [
     "category": "Fashion",
     "year": 2026,
     "desc": "Третий образ лукбука в той же студии и с той же моделью."
+  },
+  {
+    "id": 35,
+    "aspect": 0.5625,
+    "type": "video",
+    "file": "works/bag-lift.mp4",
+    "poster": "works/bag-lift-cover-v2.jpg",
+    "title": "Сумка. Подъём в кадре",
+    "category": "Концепт рекламы",
+    "year": 2026,
+    "desc": "Модель поднимает светлую сумку: форма и детали товара в движении. Концепт, заказа не было."
+  },
+  {
+    "id": 36,
+    "aspect": 0.558125,
+    "type": "image",
+    "file": "works/bag-backstage.jpg",
+    "poster": "works/bag-backstage.jpg",
+    "title": "Сумка. Две героини",
+    "category": "Концепт рекламы",
+    "year": 2026,
+    "desc": "Бордовая сумка в кадре с двумя героинями. Концепт, заказа не было."
+  },
+  {
+    "id": 18,
+    "aspect": 0.8,
+    "type": "image",
+    "file": "works/18.jpg",
+    "poster": "works/18.jpg",
+    "title": "Лукбук. Образ 2",
+    "category": "Fashion",
+    "year": 2026,
+    "desc": "Детали образа: ткань, перчатки и свет как на студийной съёмке."
   },
   {
     "id": 34,
@@ -203,28 +225,6 @@ const WORKS = [
     "category": "Fashion",
     "year": 2026,
     "desc": "Крупно: нити жемчуга, косточки корсета, фактура ткани."
-  },
-  {
-    "id": 35,
-    "aspect": 0.5625,
-    "type": "video",
-    "file": "works/bag-lift.mp4",
-    "poster": "works/bag-lift-cover-v2.jpg",
-    "title": "Сумка. Подъём в кадре",
-    "category": "Концепт рекламы",
-    "year": 2026,
-    "desc": "Модель поднимает светлую сумку: форма и детали товара в движении. Концепт, заказа не было."
-  },
-  {
-    "id": 36,
-    "aspect": 0.558125,
-    "type": "image",
-    "file": "works/bag-backstage.jpg",
-    "poster": "works/bag-backstage.jpg",
-    "title": "Сумка. Две героини",
-    "category": "Концепт рекламы",
-    "year": 2026,
-    "desc": "Бордовая сумка в кадре с двумя героинями. Концепт, заказа не было."
   },
   {
     "id": 43,
