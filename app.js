@@ -40,6 +40,30 @@ const WORKS = [
     "controls": true
   },
   {
+    "id": 45,
+    "aspect": 1.7777777777777777,
+    "type": "video",
+    "file": "works/posledniy-mandarin-preview.mp4",
+    "poster": "works/posledniy-mandarin-cover.jpg",
+    "title": "Последний мандарин",
+    "category": "Короткометражный фильм",
+    "year": 2026,
+    "desc": "Короткое превью фильма: зимняя улица, мама и дочь за столом.",
+    "controls": true
+  },
+  {
+    "id": 46,
+    "aspect": 1.7777777777777777,
+    "type": "video",
+    "file": "works/odinochestvo-preview.mp4",
+    "poster": "works/odinochestvo-cover.jpg",
+    "title": "Одиночество",
+    "category": "Короткометражный фильм",
+    "year": 2026,
+    "desc": "Короткое превью фильма: лица, взгляды и реакции героев.",
+    "controls": true
+  },
+  {
     "id": 41,
     "aspect": 1.7821782178217822,
     "type": "video",
