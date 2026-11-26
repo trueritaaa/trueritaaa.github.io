@@ -929,7 +929,7 @@ function createProjects() {
   let built = false, running = false, raf = 0, entered = false;
   let W = 1, H = 1, phone = false, maxOff = 0, lastPlayEval = 0;
   let target = 0, offset = 0, prevOff = 0, skewS = 0, vel = 0, lbOpen = false, hovered = null;
-  const cards = WORKS.map((item, i) => ({ item, i, aspect: 9 / 16, x: 0, y: 0, w: 1, h: 1, fx: 0, o: reduced ? 1 : 0, hs: 1, dim: 1, video: null, play: false,
+  const cards = WORKS.filter(item => item.type === 'video').map((item, i) => ({ item, i, aspect: 9 / 16, x: 0, y: 0, w: 1, h: 1, fx: 0, o: reduced ? 1 : 0, hs: 1, dim: 1, video: null, play: false,
     group: item.group || GROUP_OF[item.id] || 'РАБОТЫ' }));
   
 
