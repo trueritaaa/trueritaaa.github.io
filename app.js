@@ -40,6 +40,18 @@ const WORKS = [
     "controls": true
   },
   {
+    "id": 47,
+    "aspect": 0.5625,
+    "type": "video",
+    "file": "works/vasilisa-koshchei-sled.mp4",
+    "poster": "works/vasilisa-koshchei-sled-cover.jpg",
+    "title": "Василиса и Кощей. Санки",
+    "category": "Сюжетный ролик",
+    "year": 2026,
+    "desc": "Василиса и Кощей мчатся на санях по зимнему городу. Полный ролик с музыкой и репликами.",
+    "controls": true
+  },
+  {
     "id": 45,
     "aspect": 1.7777777777777777,
     "type": "video",
