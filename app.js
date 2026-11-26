@@ -6,7 +6,7 @@ import * as THREE from 'three';
 // Куда ведёт кнопка «Заказать» и ссылка «Написать» в разделе «Обо мне».
 // Можно заменить на личный Telegram, например 'https://t.me/username'.
 const CONTACT_URL = 'https://t.me/margarita_1003';
-const INSTAGRAM_URL = 'https://ig.me/m/trueritaaa';
+const INSTAGRAM_URL = 'https://www.instagram.com/vera.lanskaya.ai/';
 const CHANNEL_URL = 'https://t.me/trueritaaa';
 
 /* =====================================================================
@@ -131,14 +131,15 @@ const WORKS = [
   },
   {
     "id": 43,
-    "aspect": 0.5583333333333333,
-    "type": "image",
-    "file": "works/vasilisa-full-v9.jpg",
+    "aspect": 0.557632398753894,
+    "type": "video",
+    "file": "works/vasilisa-turn-fast.mp4",
     "poster": "works/vasilisa-full-v9.jpg",
     "title": "Василиса. Полный рост",
     "category": "ИИ-персонаж",
     "year": 2026,
-    "desc": "Обновлённый образ персонажа для проекта «Сыскная изба»: костюм и полный рост."
+    "desc": "Персонаж проекта «Сыскная изба»: поворот в полный рост, движение и детали костюма.",
+    "controls": true
   },
   {
     "id": 38,
@@ -153,14 +154,15 @@ const WORKS = [
   },
   {
     "id": 44,
-    "aspect": 0.75,
-    "type": "image",
-    "file": "works/koshchei-full-v6.jpg",
+    "aspect": 0.7472924187725631,
+    "type": "video",
+    "file": "works/koshchei-turn-fast.mp4",
     "poster": "works/koshchei-full-v6.jpg",
     "title": "Кощей. Полный рост",
     "category": "ИИ-персонаж",
     "year": 2026,
-    "desc": "Обновлённый образ персонажа для проекта «Сыскная изба»: костюм и полный рост."
+    "desc": "Персонаж проекта «Сыскная изба»: поворот в полный рост, движение и детали костюма.",
+    "controls": true
   },
   {
     "id": 17,
@@ -816,9 +818,9 @@ function createGallery() {
   const wmC = $('#g-wm'), countEl = $('#g-count'), labels = el.querySelectorAll('.g-label span'), hint = $('#g-hint');
   function drawWordmark() {
     const d = dprOf(), f = '600 64px Geist';
-    const m = textCanvas(10, 10, 1).ctx; m.font = f; const tw = Math.ceil(m.measureText('RITA.E').width) + 8;
+    const m = textCanvas(10, 10, 1).ctx; m.font = f; const tw = Math.ceil(m.measureText('VERA.AI').width) + 8;
     wmC.width = tw * d; wmC.height = 90 * d; const ctx = wmC.getContext('2d'); ctx.scale(d, d);
-    ctx.font = f; ctx.fillStyle = '#ededeb'; ctx.textBaseline = 'middle'; ctx.fillText('RITA.E', 4, 47);
+    ctx.font = f; ctx.fillStyle = '#ededeb'; ctx.textBaseline = 'middle'; ctx.fillText('VERA.AI', 4, 47);
     wmC.style.width = '90px'; wmC.style.height = (90 * 90 / tw) + 'px';
   }
   function finishSphereFast() {
