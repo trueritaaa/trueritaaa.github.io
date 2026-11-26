@@ -15,6 +15,8 @@ const CHANNEL_URL = 'https://t.me/trueritaaa';
    type: 'video' (нужны NN.mp4 + постер NN.jpg) или 'image' (только NN.jpg)
    ===================================================================== */
 const WORKS = [
+  {"id": 39, "aspect": 0.5625, "type": "video", "file": "works/darling-ines-grwm.mp4", "poster": "works/darling-ines-grwm-cover.jpg", "title": "DARLING. Уход за кожей", "category": "Beauty / концепт рекламы", "year": 2026, "desc": "Уход за кожей с Ines: средства DARLING, маска и крем. Концепт, заказа не было.", "controls": true},
+  {"id": 40, "aspect": 0.5625, "type": "video", "file": "works/miuz-diamonds.mp4", "poster": "works/miuz-diamonds-cover.jpg", "title": "MIUZ Diamonds. Праздничный вечер", "category": "Украшения / концепт рекламы", "year": 2026, "desc": "Ювелирный ролик: кулон крупным планом и героиня в вечернем образе. Концепт, заказа не было.", "controls": true},
   {"id": 32, "aspect": 0.5625, "type": "video", "file": "works/fashion-gloves.mp4", "poster": "works/fashion-gloves-cover-v2.jpg", "title": "Лукбук. Перчатки в движении", "category": "Fashion", "year": 2026, "desc": "Образ 2: модель поправляет бордовые перчатки."},
   {"id": 33, "aspect": 0.5625, "type": "video", "file": "works/fashion-feathers.mp4", "poster": "works/fashion-feathers-cover-v2.jpg", "title": "Лукбук. Красные перья в движении", "category": "Fashion", "year": 2026, "desc": "Образ 4: улыбка и поворот головы у бархатной шторы."},
   {"id": 34, "aspect": 0.74625, "type": "image", "file": "works/fashion-look6-detail.jpg", "poster": "works/fashion-look6-detail.jpg", "title": "Лукбук. Образ 6, деталь", "category": "Fashion", "year": 2026, "desc": "Бордовый мех, четыре пуговицы и фактура сумки крупным планом."},
@@ -625,7 +627,7 @@ function createProjects() {
   function openLB(c) {
     lbOpen = true; const it = c.item, mw = $('#lb-mw'); mw.innerHTML = '';
     let m;
-    if (it.type === 'video') { m = document.createElement('video'); m.muted = true; m.loop = true; m.playsInline = true; m.setAttribute('playsinline', ''); m.autoplay = true; m.poster = it.poster; m.src = it.file; m.addEventListener('loadedmetadata', () => fitMedia(mw, m.videoWidth / m.videoHeight)); safePlay(m); }
+    if (it.type === 'video') { m = document.createElement('video'); m.muted = true; m.loop = true; m.playsInline = true; m.setAttribute('playsinline', ''); m.autoplay = true; m.controls = !!it.controls; m.poster = it.poster; m.src = it.file; m.addEventListener('loadedmetadata', () => fitMedia(mw, m.videoWidth / m.videoHeight)); safePlay(m); }
     else { m = document.createElement('img'); m.src = it.file; }
     mw.appendChild(m); fitMedia(mw, c.aspect);
     $('#lb-t').textContent = it.title; $('#lb-c').textContent = `${it.category}, ${it.year}`; $('#lb-d').textContent = it.desc;
