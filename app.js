@@ -95,6 +95,42 @@ const WORKS = [
     "desc": "Модель поднимает светлую сумку: форма и детали товара в движении. Концепт, заказа не было."
   },
   {
+    "id": 48,
+    "aspect": 0.5625,
+    "type": "video",
+    "file": "works/bags-rail-walk.mp4",
+    "poster": "works/bags-rail-walk-cover.jpg",
+    "title": "Сумки. Проход модели",
+    "category": "Концепт рекламы",
+    "year": 2026,
+    "desc": "Модель проходит мимо ряда сумок с бордовой сумкой в руке. Концепт, заказа не было.",
+    "controls": true
+  },
+  {
+    "id": 49,
+    "aspect": 0.5625,
+    "type": "video",
+    "file": "works/bag-burgundy-lift.mp4",
+    "poster": "works/bag-burgundy-lift-cover.jpg",
+    "title": "Сумка. Бордовый цвет",
+    "category": "Концепт рекламы",
+    "year": 2026,
+    "desc": "Модель поднимает бордовую сумку: фактура кожи и форма крупным планом. Концепт, заказа не было.",
+    "controls": true
+  },
+  {
+    "id": 50,
+    "aspect": 0.5625,
+    "type": "video",
+    "file": "works/bag-walk-close.mp4",
+    "poster": "works/bag-walk-close-cover.jpg",
+    "title": "Сумка. В движении",
+    "category": "Концепт рекламы",
+    "year": 2026,
+    "desc": "Крупный план сумки во время ходьбы. Концепт, заказа не было.",
+    "controls": true
+  },
+  {
     "id": 36,
     "aspect": 0.558125,
     "type": "image",
