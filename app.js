@@ -40,6 +40,28 @@ const WORKS = [
     "controls": true
   },
   {
+    "id": 32,
+    "aspect": 0.5625,
+    "type": "video",
+    "file": "works/fashion-gloves.mp4",
+    "poster": "works/fashion-gloves-cover-v2.jpg",
+    "title": "Лукбук. Перчатки в движении",
+    "category": "Fashion",
+    "year": 2026,
+    "desc": "Образ 2: модель поправляет бордовые перчатки."
+  },
+  {
+    "id": 33,
+    "aspect": 0.5625,
+    "type": "video",
+    "file": "works/fashion-feathers.mp4",
+    "poster": "works/fashion-feathers-cover-v2.jpg",
+    "title": "Лукбук. Красные перья в движении",
+    "category": "Fashion",
+    "year": 2026,
+    "desc": "Образ 4: улыбка и поворот головы у бархатной шторы."
+  },
+  {
     "id": 17,
     "aspect": 0.8,
     "type": "image",
@@ -71,28 +93,6 @@ const WORKS = [
     "category": "Fashion",
     "year": 2026,
     "desc": "Третий образ лукбука в той же студии и с той же моделью."
-  },
-  {
-    "id": 32,
-    "aspect": 0.5625,
-    "type": "video",
-    "file": "works/fashion-gloves.mp4",
-    "poster": "works/fashion-gloves-cover-v2.jpg",
-    "title": "Лукбук. Перчатки в движении",
-    "category": "Fashion",
-    "year": 2026,
-    "desc": "Образ 2: модель поправляет бордовые перчатки."
-  },
-  {
-    "id": 33,
-    "aspect": 0.5625,
-    "type": "video",
-    "file": "works/fashion-feathers.mp4",
-    "poster": "works/fashion-feathers-cover-v2.jpg",
-    "title": "Лукбук. Красные перья в движении",
-    "category": "Fashion",
-    "year": 2026,
-    "desc": "Образ 4: улыбка и поворот головы у бархатной шторы."
   },
   {
     "id": 34,
