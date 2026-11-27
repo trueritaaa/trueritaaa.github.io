@@ -263,6 +263,28 @@ const WORKS = [
     "desc": "Крупно: нити жемчуга, косточки корсета, фактура ткани."
   },
   {
+    "id": 51,
+    "aspect": 1.7843137254901962,
+    "type": "image",
+    "file": "works/ben-portrait.jpg",
+    "poster": "works/ben-portrait.jpg",
+    "title": "Бен. Столик на двоих",
+    "category": "ИИ-персонаж",
+    "year": 2026,
+    "desc": "Персонаж проекта «Столик на двоих». Крупный план в кафе."
+  },
+  {
+    "id": 52,
+    "aspect": 1.7843137254901962,
+    "type": "image",
+    "file": "works/nora-portrait.jpg",
+    "poster": "works/nora-portrait.jpg",
+    "title": "Нора. Столик на двоих",
+    "category": "ИИ-персонаж",
+    "year": 2026,
+    "desc": "Персонаж проекта «Столик на двоих». Крупный план в кафе."
+  },
+  {
     "id": 43,
     "aspect": 0.557632398753894,
     "type": "video",
