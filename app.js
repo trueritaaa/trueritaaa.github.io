@@ -7,7 +7,6 @@ import * as THREE from 'three';
 // Можно заменить на личный Telegram, например 'https://t.me/username'.
 const CONTACT_URL = 'https://t.me/margarita_1003';
 const INSTAGRAM_URL = 'https://www.instagram.com/vera.lanskaya.ai/';
-const CHANNEL_URL = 'https://t.me/trueritaaa';
 
 /* =====================================================================
    WORKS — ВСЕ РАБОТЫ САЙТА. Меняйте/добавляйте/удаляйте элементы здесь.
@@ -1422,7 +1421,6 @@ void main(){
     { kind: 'quote', body: '«Персонаж живёт дольше одного ролика.»', by: '— зачем бренду своё ИИ-лицо' },
     { kind: 'links', head: 'Связаться', items: [
       { t: 'Написать в Telegram →', link: { url: CONTACT_URL, blank: true } },
-      { t: 'Telegram-канал с работами →', link: { url: CHANNEL_URL, blank: true } },
       { t: 'Написать в Instagram →', link: { url: INSTAGRAM_URL, blank: true } },
       { t: 'Смотреть все работы →', link: { url: '#projects', blank: false } },
       { t: 'Напишите: что за бизнес, где будет ролик и к какому сроку' }] },
